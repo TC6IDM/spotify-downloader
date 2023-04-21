@@ -15,6 +15,7 @@ from typing import Dict, List, Optional, Tuple, Type, Union
 
 from yt_dlp.postprocessor.modify_chapters import ModifyChaptersPP
 from yt_dlp.postprocessor.sponsorblock import SponsorBlockPP
+from extraUtil import get_videos, getBestVideo, prRed, prYellow
 
 from spotdl.download.progress_handler import ProgressHandler
 from spotdl.providers.audio import AudioProvider, YouTube, YouTubeMusic
@@ -332,9 +333,11 @@ class Downloader:
                 return url
 
             logger.debug("%s failed to find %s", audio_provider.name, song.display_name)
-
-        raise LookupError(f"No results found for song: {song.display_name}")
-
+        prRed(f"LookupError: No results found for song: {song.display_name}")
+        prYellow(f"Using Alternative Method")
+        return getBestVideo(get_videos(song))
+        # raise LookupError(f"No results found for song: {song.display_name}")
+        
     def search_lyrics(self, song: Song) -> Optional[str]:
         """
         Search for lyrics using all available providers.

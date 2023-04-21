@@ -61,7 +61,7 @@ def get_spotdl_path() -> Path:
         if user_data_dir.exists():
             return user_data_dir
 
-    spotdl_path = Path(os.path.expanduser("~"), ".spotdl")
+    spotdl_path = Path("C:\\Users\\Owner\\Desktop\\spotify-downloader")
     if not spotdl_path.exists():
         os.mkdir(spotdl_path)
 
@@ -231,7 +231,7 @@ SPOTIFY_OPTIONS: SpotifyOptions = {
 }
 
 DOWNLOADER_OPTIONS: DownloaderOptions = {
-    "audio_providers": ["youtube-music"],
+    "audio_providers": ["youtube-music", "youtube","slider-kz"],
     "lyrics_providers": ["genius", "azlyrics", "musixmatch"],
     "playlist_numbering": False,
     "scan_for_songs": False,
