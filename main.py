@@ -1,9 +1,6 @@
 import re
 import subprocess
 from stdUtil import prPurple, PLAYLIST_FILE_NAME
-args = {
-    "no_encode": True,
-}
 def run():
     file = open(PLAYLIST_FILE_NAME,'r')
     for currentPlaylist in file.readlines():

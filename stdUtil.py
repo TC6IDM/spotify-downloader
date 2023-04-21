@@ -12,7 +12,6 @@ def prLightPurple(skk,end="\n"): print("\033[94m{}\033[00m" .format(skk),end=end
 def prPurple(skk,end="\n"): print("\033[95m{}\033[00m" .format(skk),end=end)
 
 load_dotenv()
-
 PLAYLIST_FILE_NAME = os.getenv("PLAYLIST_FILE_NAME", "")
 
 def deleteBadCharacters(text) -> str:
