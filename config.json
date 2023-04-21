@@ -1,8 +1,8 @@
 {
     "client_id": "5f573c9620494bae87890c0f08a60293",
     "client_secret": "212476d9b0f3472eaa762d90b19b0ba8",
-    "auth_token": null,
-    "user_auth": false,
+    "auth_token": "BQAVpUU8e2IqypXu4TJaNxkKecduigS6ztTw7A7kmlzfS-avMvyu7Xve9tMQ88lpTRZbcaGrPa5VhlKyLWVmwf3LyeD7usa3lYR81Sb-AJVI21eqSidYnIdobwmFvRu_5-DiDEXp62tFG-dJbNL4bALj9E4A0leiqq2-NcekWv293pUDMpJaStTHifuMk-0LDbX-kz7KCAYO4GqHa9mvMbO7lE5VgvfAmdAlwhTPOXzcnUHo3BI7a3PJsxJDk8HXV6D_ie-pfJQ3lH-CDgrdO4t5wmWQDWg0t9oJXpiklaQvHA2ToxO_CP1fJBbgxE8RXBNrgIugyO4O0H_WXYe7YInAHo66HeklJPOc03-J1qA",
+    "user_auth": true,
     "headless": false,
     "cache_path": "C:\\Users\\Owner\\.spotdl\\.spotipy",
     "no_cache": false,

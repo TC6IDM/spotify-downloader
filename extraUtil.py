@@ -66,26 +66,27 @@ def get_videos(song: Song) -> List[YoutubeSong]:
         youtubeVideos = []
         s = Search(youtubeSearch)
         if (len(s.results)<MAX_SEARCH_DEPTH):
-            prRed(f'Found {len(youtubeVideos)} results, not enough, retrying with different query',end='\r')
+            # prRed(f'Found {len(youtubeVideos)} results, not enough, retrying with different query',end='\r')
             match retries:
                 case 0:
-                    prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist')
+                    # prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist')
                     youtubeSearch = song.artist+" - "+song.name+" "+intitleSTANDARD
                 case 1:
-                    prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist and without brackets in the track name')
+                    # prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist and without brackets in the track name')
                     youtubeSearch = song.artist+" - "+removeBrackets(song.name)+" "+intitleSTANDARD
                 case 2:
-                    prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist and without brackets in the track name and without #intitle')
+                    # prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist and without brackets in the track name and without #intitle')
                     youtubeSearch = song.artist+" - "+removeBrackets(song.name)
                 case _:
-                    prRed(f'\nRetry: {retries} Song Skipped')
+                    pass
+                    # prRed(f'\nRetry: {retries} Song Skipped')
             retries+=1
-            prYellow(f'NEW QUERY: {youtubeSearch}')
+            # prYellow(f'NEW QUERY: {youtubeSearch}')
             continue
                 
         enoughResults = True 
         for i,r in enumerate(s.results):
-            prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%                        ',end='\r')
+            # prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%                        ',end='\r')
             thisYoutubeSong = YoutubeSong(song,r)
             youtubeVideos.append(thisYoutubeSong)
         
@@ -118,5 +119,5 @@ def getBestVideo(youtubeVideos: List[YoutubeSong]) -> str:
             possibleSongList.sort(key=lambda x: x.weight, reverse=True)
             found = possibleSongList[0]
             return found.youtubeLink
-        prRed(f'No suitable video found for {currentYoutubeVideo.song.name} within {difference} ms of the origninal',end='\r')
+        # prRed(f'No suitable video found for {currentYoutubeVideo.song.name} within {difference} ms of the origninal',end='\r')
         difference+=1000

@@ -1,8 +1,13 @@
 import re
 import subprocess
 from stdUtil import prPurple, PLAYLIST_FILE_NAME
+import urllib.request
+
 def run():
     file = open(PLAYLIST_FILE_NAME,'r')
+    
+    # page = urllib.request.urlopen('https://developer.spotify.com/')
+    # print(page.read())
     for currentPlaylist in file.readlines():
         search = re.search(r'(?<=https:\/\/open\.spotify\.com\/)[^\/]+',currentPlaylist)
         type = "saved" if search is None else search.group(0)

@@ -142,3 +142,4 @@ temp/
 #my files :)
 !config.json
 !playlists.txt
+!.env
