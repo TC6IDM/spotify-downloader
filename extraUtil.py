@@ -1,7 +1,9 @@
 from __future__ import unicode_literals
+import json
 import os
 import unicodedata
 from dotenv import load_dotenv
+import jsonpickle
 from YoutubeSong import YoutubeSong
 from spotdl.types.song import Song
 from pytube import Search
@@ -58,30 +60,30 @@ def get_videos(song: Song) -> List[YoutubeSong]:
         intitleSTANDARD += " #intitle explicit"
     trackArtistsPlain = [deleteBadCharacters(artist) for artist in song.artists]
     trackArtists = "/".join(trackArtistsPlain)
-    youtubeSearch = trackArtists+" - "+song.name+" "+intitleSTANDARD
+    song.youtubeSearch = trackArtists+" - "+song.name+" "+intitleSTANDARD
     enoughResults = False
     retries = 0
     while not enoughResults:
-        print("Searching Youtube for "+youtubeSearch)
+        print("Searching Youtube for "+song.youtubeSearch)
         youtubeVideos = []
-        s = Search(youtubeSearch)
+        s = Search(song.youtubeSearch)
         if (len(s.results)<MAX_SEARCH_DEPTH):
             # prRed(f'Found {len(youtubeVideos)} results, not enough, retrying with different query',end='\r')
             match retries:
                 case 0:
-                    # prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist')
-                    youtubeSearch = song.artist+" - "+song.name+" "+intitleSTANDARD
+                    # prYellow(f'\nQUERY: {song.youtubeSearch}\nRetrying with only the original artist')
+                    song.youtubeSearch = song.artist+" - "+song.name+" "+intitleSTANDARD
                 case 1:
-                    # prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist and without brackets in the track name')
-                    youtubeSearch = song.artist+" - "+removeBrackets(song.name)+" "+intitleSTANDARD
+                    # prYellow(f'\nQUERY: {song.youtubeSearch}\nRetrying with only the original artist and without brackets in the track name')
+                    song.youtubeSearch = song.artist+" - "+removeBrackets(song.name)+" "+intitleSTANDARD
                 case 2:
-                    # prYellow(f'\nQUERY: {youtubeSearch}\nRetrying with only the original artist and without brackets in the track name and without #intitle')
-                    youtubeSearch = song.artist+" - "+removeBrackets(song.name)
+                    # prYellow(f'\nQUERY: {song.youtubeSearch}\nRetrying with only the original artist and without brackets in the track name and without #intitle')
+                    song.youtubeSearch = song.artist+" - "+removeBrackets(song.name)
                 case _:
                     pass
                     # prRed(f'\nRetry: {retries} Song Skipped')
             retries+=1
-            # prYellow(f'NEW QUERY: {youtubeSearch}')
+            # prYellow(f'NEW QUERY: {song.youtubeSearch}')
             continue
                 
         enoughResults = True 
@@ -90,12 +92,12 @@ def get_videos(song: Song) -> List[YoutubeSong]:
             thisYoutubeSong = YoutubeSong(song,r)
             youtubeVideos.append(thisYoutubeSong)
         
-        return youtubeVideos
+        return youtubeVideos,song
             
-def getBestVideo(youtubeVideos: List[YoutubeSong]) -> str:
+def getBestVideo(youtubeVideos: List[YoutubeSong],song: Song) -> str:
     found = None
     difference = 0
-    possibleSongList=[]
+    possibleSongList: List[YoutubeSong] =[]
     oneT=10**12
     while found is None:
         
@@ -114,10 +116,18 @@ def getBestVideo(youtubeVideos: List[YoutubeSong]) -> str:
             if currentYoutubeVideo.goodNameInTitle: currentYoutubeVideo.weight += oneT
             if currentYoutubeVideo.closeToTime: currentYoutubeVideo.weight += oneT 
             possibleSongList.append(currentYoutubeVideo)
-
+        song.youtubeSongs = possibleSongList
         if (len(possibleSongList)!=0):
             possibleSongList.sort(key=lambda x: x.weight, reverse=True)
-            found = possibleSongList[0]
-            return found.youtubeLink
+            song.bestMatch = possibleSongList[0]
+            saveToDebug(song)
+            return song.bestMatch.youtubeLink
         # prRed(f'No suitable video found for {currentYoutubeVideo.song.name} within {difference} ms of the origninal',end='\r')
         difference+=1000
+        
+def saveToDebug(song: Song):
+    json_object = jsonpickle.encode(song)
+    if not os.path.exists("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug"):
+        os.makedirs("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug")
+    with open("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug"+song.name, "w") as outfile:
+        outfile.write(json.dumps(json.loads(json_object), indent=4))

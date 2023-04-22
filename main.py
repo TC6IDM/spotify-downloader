@@ -1,7 +1,6 @@
 import re
 import subprocess
 from stdUtil import prPurple, PLAYLIST_FILE_NAME
-import urllib.request
 
 def run():
     file = open(PLAYLIST_FILE_NAME,'r')

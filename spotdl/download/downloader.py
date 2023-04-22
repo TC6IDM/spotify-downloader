@@ -8,6 +8,7 @@ import json
 import logging
 import shutil
 import sys
+import time
 import traceback
 from argparse import Namespace
 from pathlib import Path
@@ -335,6 +336,7 @@ class Downloader:
             logger.debug("%s failed to find %s", audio_provider.name, song.display_name)
         prRed(f"LookupError: No results found for song: {song.display_name}")
         prYellow(f"Using Alternative Method")
+        # time.sleep(200000000)
         return getBestVideo(get_videos(song))
         # raise LookupError(f"No results found for song: {song.display_name}")
         

@@ -56,6 +56,9 @@ class Song:
     list_url: Optional[str] = None
     list_position: Optional[int] = None
     list_length: Optional[int] = None
+    youtubeSearch: str = ""
+    bestMatch = None
+    youtubeSongs = None
 
     @classmethod
     def from_url(cls, url: str) -> "Song":
