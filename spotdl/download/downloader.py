@@ -18,7 +18,7 @@ from yt_dlp.postprocessor.modify_chapters import ModifyChaptersPP
 from yt_dlp.postprocessor.sponsorblock import SponsorBlockPP
 from extraUtil import get_videos, getBestVideo, prRed, prYellow
 
-from spotdl.download.progress_handler import ProgressHandler
+from spotdl.download.progress_handler import ProgressHandler, SongTracker
 from spotdl.providers.audio import AudioProvider, YouTube, YouTubeMusic
 from spotdl.providers.audio.sliderkz import SliderKZ
 from spotdl.providers.lyrics import AzLyrics, Genius, LyricsProvider, MusixMatch, Synced
@@ -317,7 +317,7 @@ class Downloader:
         async with self.semaphore:
             return await self.loop.run_in_executor(None, self.search_and_download, song)
 
-    def search(self, song: Song) -> str:
+    def search(self, song: Song, display_progress_tracker : SongTracker) -> str:
         """
         Search for a song using all available providers.
 
@@ -329,15 +329,16 @@ class Downloader:
         """
 
         for audio_provider in self.audio_providers:
+            display_progress_tracker.notify_search(audio_provider.name)
             url = audio_provider.search(song)
             if url:
                 return url
 
             logger.debug("%s failed to find %s", audio_provider.name, song.display_name)
-        prRed(f"LookupError: No results found for song: {song.display_name}")
-        prYellow(f"Using Alternative Method")
+        # prRed(f"LookupError: No results found for song: {song.display_name}")
+        display_progress_tracker.notify_search("Original Method")
         # time.sleep(200000000)
-        return getBestVideo(get_videos(song))
+        return getBestVideo(song)
         # raise LookupError(f"No results found for song: {song.display_name}")
         
     def search_lyrics(self, song: Song) -> Optional[str]:
@@ -554,7 +555,7 @@ class Downloader:
             # Create the output directory if it doesn't exist
             output_file.parent.mkdir(parents=True, exist_ok=True)
             if song.download_url is None:
-                download_url = self.search(song)
+                download_url = self.search(song,display_progress_tracker)
             else:
                 download_url = song.download_url
 
@@ -572,7 +573,8 @@ class Downloader:
             audio_downloader.audio_handler.add_progress_hook(
                 display_progress_tracker.yt_dlp_progress_hook
             )
-
+            
+            display_progress_tracker.notify_downloading()
             # Download the song using yt-dlp
             download_info = audio_downloader.get_download_metadata(
                 download_url, download=True

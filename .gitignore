@@ -143,3 +143,5 @@ temp/
 !config.json
 !playlists.txt
 !.env
+!.txt
+/debug

@@ -20,7 +20,7 @@
     "playlist_numbering": false,
     "scan_for_songs": false,
     "m3u": null,
-    "output": "D:\\Songs4\\{list-name}\\{list-position} {artists} - {title}.{output-ext}",
+    "output": "D:\\Songs4\\{list-name}\\({list-position}) {artists} - {title}.{output-ext}",
     "overwrite": "skip",
     "search_query": null,
     "ffmpeg": "ffmpeg",

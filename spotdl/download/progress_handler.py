@@ -278,7 +278,7 @@ class SongTracker:
         if not self.parent.simple_tui:
             self.task_id = self.parent.rich_progress_bar.add_task(
                 description=escape(self.song_name),
-                message="Download Started",
+                message="Searching...",
                 total=100,
                 completed=self.progress,
                 start=False,
@@ -337,6 +337,19 @@ class SongTracker:
 
         if self.parent.update_callback:
             self.parent.update_callback(self, message)
+
+    def notify_search(self,status:str) -> None:
+        """
+        Notifies the progress handler that the song is being searched.
+        """
+
+        self.update(status)
+        
+    def notify_downloading(self, status="Starting Download") -> None:
+        """
+        Notifies the progress handler that the song is being downloaded.
+        """
+        self.update(status)
 
     def notify_error(
         self, message: str, traceback: Exception, finish: bool = False

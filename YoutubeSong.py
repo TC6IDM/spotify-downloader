@@ -27,7 +27,6 @@ class YoutubeSong:
                  "sped up",
                  "acapella",
                  "vocals only",
-                 "radio edit",
                  "extended",
                  "slowed",
                  "reverb",

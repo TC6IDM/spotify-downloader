@@ -53,59 +53,33 @@ def deleteBadCharacters(text) -> str:
     return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
 
 def get_videos(song: Song) -> List[YoutubeSong]:
-    '''Gets and returns the video ID and Title (as seen on youtube)'''        
-    intitleSTANDARD = "#intitle official audio #intitle high quality #intitle HQ"
-        
-    if (song.explicit): 
-        intitleSTANDARD += " #intitle explicit"
+    '''Gets and returns the video ID and Title (as seen on youtube)'''     
     trackArtistsPlain = [deleteBadCharacters(artist) for artist in song.artists]
     trackArtists = "/".join(trackArtistsPlain)
-    song.youtubeSearch = trackArtists+" - "+song.name+" "+intitleSTANDARD
-    enoughResults = False
-    retries = 0
-    while not enoughResults:
-        print("Searching Youtube for "+song.youtubeSearch)
-        youtubeVideos = []
-        s = Search(song.youtubeSearch)
-        if (len(s.results)<MAX_SEARCH_DEPTH):
-            # prRed(f'Found {len(youtubeVideos)} results, not enough, retrying with different query',end='\r')
-            match retries:
-                case 0:
-                    # prYellow(f'\nQUERY: {song.youtubeSearch}\nRetrying with only the original artist')
-                    song.youtubeSearch = song.artist+" - "+song.name+" "+intitleSTANDARD
-                case 1:
-                    # prYellow(f'\nQUERY: {song.youtubeSearch}\nRetrying with only the original artist and without brackets in the track name')
-                    song.youtubeSearch = song.artist+" - "+removeBrackets(song.name)+" "+intitleSTANDARD
-                case 2:
-                    # prYellow(f'\nQUERY: {song.youtubeSearch}\nRetrying with only the original artist and without brackets in the track name and without #intitle')
-                    song.youtubeSearch = song.artist+" - "+removeBrackets(song.name)
-                case _:
-                    pass
-                    # prRed(f'\nRetry: {retries} Song Skipped')
-            retries+=1
-            # prYellow(f'NEW QUERY: {song.youtubeSearch}')
-            continue
-                
-        enoughResults = True 
-        for i,r in enumerate(s.results):
-            # prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%                        ',end='\r')
-            thisYoutubeSong = YoutubeSong(song,r)
-            youtubeVideos.append(thisYoutubeSong)
-        
-        return youtubeVideos,song
+    song.youtubeSearch = trackArtists+" - "+deleteBadCharacters(song.name)
+    # print("Searching Youtube for "+song.youtubeSearch)
+    youtubeVideos = []
+    s = Search(song.youtubeSearch)
+    for r in s.results:
+        # prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%                        ',end='\r')
+        thisYoutubeSong = YoutubeSong(song,r)
+        youtubeVideos.append(thisYoutubeSong)
+    return youtubeVideos
             
-def getBestVideo(youtubeVideos: List[YoutubeSong],song: Song) -> str:
-    found = None
+def getBestVideo(song: Song) -> str:
+    song.bestMatch = None
+    song.youtubeSongs = get_videos(song)
     difference = 0
     possibleSongList: List[YoutubeSong] =[]
     oneT=10**12
-    while found is None:
+    while song.bestMatch is None:
         
-        for i,currentYoutubeVideo in enumerate(youtubeVideos):
+        for i,currentYoutubeVideo in enumerate(song.youtubeSongs):
             # print(f'\nFinding Best Video {i} of {MAX_SEARCH_DEPTH} {100*i/MAX_SEARCH_DEPTH}%                        ',end='\r')
+            # print(currentYoutubeVideo)
             currentYoutubeVideo.weight = currentYoutubeVideo.views
             timediff = abs(int(currentYoutubeVideo.song.duration)-int(currentYoutubeVideo.length))
-            currentYoutubeVideo.notWithinTimeLimit = timediff > difference+(int(currentYoutubeVideo.song.duration)*0.05)
+            currentYoutubeVideo.notWithinTimeLimit = timediff > difference+(int(currentYoutubeVideo.song.duration)*0.10)
             currentYoutubeVideo.badTitle = not currentYoutubeVideo.isNotBad()
             currentYoutubeVideo.nameInTitle = cleanTrackName(deleteBadCharacters(currentYoutubeVideo.song.name)) in currentYoutubeVideo.title.lower()
             currentYoutubeVideo.goodNameInTitle = currentYoutubeVideo.isVeryGood()
@@ -116,7 +90,7 @@ def getBestVideo(youtubeVideos: List[YoutubeSong],song: Song) -> str:
             if currentYoutubeVideo.goodNameInTitle: currentYoutubeVideo.weight += oneT
             if currentYoutubeVideo.closeToTime: currentYoutubeVideo.weight += oneT 
             possibleSongList.append(currentYoutubeVideo)
-        song.youtubeSongs = possibleSongList
+        
         if (len(possibleSongList)!=0):
             possibleSongList.sort(key=lambda x: x.weight, reverse=True)
             song.bestMatch = possibleSongList[0]
@@ -124,10 +98,12 @@ def getBestVideo(youtubeVideos: List[YoutubeSong],song: Song) -> str:
             return song.bestMatch.youtubeLink
         # prRed(f'No suitable video found for {currentYoutubeVideo.song.name} within {difference} ms of the origninal',end='\r')
         difference+=1000
-        
+
 def saveToDebug(song: Song):
     json_object = jsonpickle.encode(song)
-    if not os.path.exists("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug"):
-        os.makedirs("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug")
-    with open("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug"+song.name, "w") as outfile:
+    folder = "C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug\\"+song.list_name
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+    # with open("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug\\"+song.list_name+"\\"+str(addZeros(len([entry for entry in os.listdir(folder) if os.path.isfile(os.path.join(folder, entry))])+1))+" - "+removePunctuation(song.name)+".json", "w") as outfile:
+    with open(folder+"\\("+str(song.list_position)+") - "+removePunctuation(song.name)+".json", "w") as outfile:
         outfile.write(json.dumps(json.loads(json_object), indent=4))
