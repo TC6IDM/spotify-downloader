@@ -56,14 +56,17 @@ def get_videos(song: Song) -> List[YoutubeSong]:
     '''Gets and returns the video ID and Title (as seen on youtube)'''     
     trackArtistsPlain = [deleteBadCharacters(artist) for artist in song.artists]
     trackArtists = "/".join(trackArtistsPlain)
-    song.youtubeSearch = trackArtists+" - "+deleteBadCharacters(song.name)
+    song.youtubeSearch = trackArtists+" - #intitle: "+deleteBadCharacters(song.name)
     # print("Searching Youtube for "+song.youtubeSearch)
     youtubeVideos = []
-    s = Search(song.youtubeSearch)
-    for r in s.results:
-        # prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%                        ',end='\r')
-        thisYoutubeSong = YoutubeSong(song,r)
-        youtubeVideos.append(thisYoutubeSong)
+    while len(youtubeVideos) == 0:
+        s = Search(song.youtubeSearch)
+        for r in s.results:
+            # prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%                        ',end='\r')
+            thisYoutubeSong = YoutubeSong(song,r)
+            youtubeVideos.append(thisYoutubeSong)
+        if len(youtubeVideos) == 0:
+            song.youtubeSearch = trackArtists+" - "+deleteBadCharacters(song.name)
     return youtubeVideos
             
 def getBestVideo(song: Song) -> str:
@@ -79,7 +82,7 @@ def getBestVideo(song: Song) -> str:
             # print(currentYoutubeVideo)
             currentYoutubeVideo.weight = currentYoutubeVideo.views
             timediff = abs(int(currentYoutubeVideo.song.duration)-int(currentYoutubeVideo.length))
-            currentYoutubeVideo.notWithinTimeLimit = timediff > difference+(int(currentYoutubeVideo.song.duration)*0.10)
+            currentYoutubeVideo.notWithinTimeLimit = timediff > difference+(int(currentYoutubeVideo.song.duration)*0.05)
             currentYoutubeVideo.badTitle = not currentYoutubeVideo.isNotBad()
             currentYoutubeVideo.nameInTitle = cleanTrackName(deleteBadCharacters(currentYoutubeVideo.song.name)) in currentYoutubeVideo.title.lower()
             currentYoutubeVideo.goodNameInTitle = currentYoutubeVideo.isVeryGood()
