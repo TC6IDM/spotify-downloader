@@ -1,0 +1,1498 @@
+{
+    "artwork_url": null,
+    "created_at": "2017-12-18T16:25:07Z",
+    "description": None,
+    "duration": 27310189,
+    "embeddable_by": "all",
+    "genre": "",
+    "id": 400947137,
+    "kind": "playlist",
+    "label_name": None,
+    "last_modified": "2023-04-18T19:33:04Z",
+    "license": "all-rights-reserved",
+    "likes_count": 2,
+    "managed_by_feeds": False,
+    "permalink": "gang-shit",
+    "permalink_url": "https://soundcloud.com/tc6idm/sets/gang-shit",
+    "public": True,
+    "purchase_title": None,
+    "purchase_url": None,
+    "release_date": None,
+    "reposts_count": 0,
+    "secret_token": None,
+    "sharing": "public",
+    "tag_list": "",
+    "title": "Gang shit",
+    "uri": "https://api.soundcloud.com/playlists/400947137",
+    "user_id": 367299305,
+    "set_type": "",
+    "is_album": False,
+    "published_at": "2018-01-16T16:22:09Z",
+    "display_date": "2018-01-16T16:22:09Z",
+    "user": {
+        "avatar_url": "https://i1.sndcdn.com/avatars-000367885184-mn3ze9-large.jpg",
+        "city": None,
+        "comments_count": 0,
+        "country_code": None,
+        "created_at": "2017-12-18T16:23:49Z",
+        "creator_subscriptions": [
+            {
+                "product": {
+                    "id": "free"
+                }
+            }
+        ],
+        "creator_subscription": {
+            "product": {
+                "id": "free"
+            }
+        },
+        "description": None,
+        "followers_count": 3,
+        "followings_count": 12,
+        "first_name": "TC6IDM",
+        "full_name": "TC6IDM",
+        "groups_count": 0,
+        "id": 367299305,
+        "kind": "user",
+        "last_modified": "2018-01-30T15:21:16Z",
+        "last_name": "",
+        "likes_count": 36,
+        "playlist_likes_count": 6,
+        "permalink": "tc6idm",
+        "permalink_url": "https://soundcloud.com/tc6idm",
+        "playlist_count": 3,
+        "reposts_count": None,
+        "track_count": 0,
+        "uri": "https://api.soundcloud.com/users/367299305",
+        "urn": "soundcloud:users:367299305",
+        "username": "TC6IDM",
+        "verified": False,
+        "visuals": None,
+        "badges": {
+            "pro": False,
+            "pro_unlimited": False,
+            "verified": False
+        },
+        "station_urn": "soundcloud:system-playlists:artist-stations:367299305",
+        "station_permalink": "artist-stations:367299305"
+    },
+    "tracks": [
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-vX7Q88FfHCAixd9f-bnHOow-large.jpg",
+            "caption": None,
+            "commentable": True,
+            "comment_count": 261,
+            "created_at": "2021-03-22T00:55:41Z",
+            "description": "#fuark #zyzz #hardstyle #deathpunch #music",
+            "downloadable": False,
+            "download_count": 0,
+            "duration": 240144,
+            "full_duration": 240144,
+            "embeddable_by": "all",
+            "genre": "Dance & EDM",
+            "has_downloads_left": False,
+            "id": 1012676782,
+            "kind": "track",
+            "label_name": None,
+            "last_modified": "2022-06-08T15:25:17Z",
+            "license": "all-rights-reserved",
+            "likes_count": 17335,
+            "permalink": "silence-i-am-hardstyle",
+            "permalink_url": "https://soundcloud.com/user-595791371/silence-i-am-hardstyle",
+            "playback_count": 1851788,
+            "public": True,
+            "publisher_metadata": {
+                "id": 1012676782,
+                "urn": "soundcloud:tracks:1012676782",
+                "artist": "MikeBrah",
+                "contains_music": True,
+                "isrc": "QM8DG2261887"
+            },
+            "purchase_title": None,
+            "purchase_url": None,
+            "release_date": None,
+            "reposts_count": 194,
+            "secret_token": None,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": True,
+            "tag_list": "fuark zyzz hardstyle deathpunch music",
+            "title": "Silence I AM HARDSTYLE",
+            "track_format": "single-track",
+            "uri": "https://api.soundcloud.com/tracks/1012676782",
+            "urn": "soundcloud:tracks:1012676782",
+            "user_id": 897203377,
+            "visuals": None,
+            "waveform_url": "https://wave.sndcdn.com/KvQh3c3uJjhT_m.json",
+            "display_date": "2021-03-22T00:55:41Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1012676782/8cbd0ed0-c975-4db0-8fc5-12bf1eb497d9/stream/hls",
+                        "preset": "mp3_0_1",
+                        "duration": 240144,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1012676782/8cbd0ed0-c975-4db0-8fc5-12bf1eb497d9/stream/progressive",
+                        "preset": "mp3_0_1",
+                        "duration": 240144,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1012676782/0f44f79f-4a17-4b86-8cf0-22e5d274ac70/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 240112,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs="opus""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "station_urn": "soundcloud:system-playlists:track-stations:1012676782",
+            "station_permalink": "track-stations:1012676782",
+            "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJDQSIsInN1YiI6IiIsInJpZCI6IiIsImlhdCI6MTY4MjMyMDcxNn0.ed1BwtMxE33vKVeOhFTtXrFp_wk2xhy7vWOe1bhTiqI",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-ybH2EBEDkYJy2hGr-UUgtmQ-large.jpg",
+                "first_name": "Michael",
+                "followers_count": 880,
+                "full_name": "Michael Sanchez",
+                "id": 897203377,
+                "kind": "user",
+                "last_modified": "2023-01-18T05:20:43Z",
+                "last_name": "Sanchez",
+                "permalink": "user-595791371",
+                "permalink_url": "https://soundcloud.com/user-595791371",
+                "uri": "https://api.soundcloud.com/users/897203377",
+                "urn": "soundcloud:users:897203377",
+                "username": "Mìkë",
+                "verified": False,
+                "city": "colorado",
+                "country_code": "US",
+                "badges": {
+                    "pro": False,
+                    "pro_unlimited": False,
+                    "verified": False
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:897203377",
+                "station_permalink": "artist-stations:897203377"
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-gY15aEaCtYtywJBV-OB5j3g-large.jpg",
+            "caption": None,
+            "commentable": True,
+            "comment_count": 351,
+            "created_at": "2022-01-19T19:39:23Z",
+            "description": "ZYZZ",
+            "downloadable": False,
+            "download_count": 0,
+            "duration": 155220,
+            "full_duration": 155220,
+            "embeddable_by": "all",
+            "genre": "Techno",
+            "has_downloads_left": False,
+            "id": 1199559439,
+            "kind": "track",
+            "label_name": None,
+            "last_modified": "2022-06-19T08:37:38Z",
+            "license": "all-rights-reserved",
+            "likes_count": 35403,
+            "permalink": "calvin-harris-ft-ellie",
+            "permalink_url": "https://soundcloud.com/vilius-bendoravi-ius/calvin-harris-ft-ellie",
+            "playback_count": 3112867,
+            "public": True,
+            "publisher_metadata": None,
+            "purchase_title": None,
+            "purchase_url": None,
+            "release_date": None,
+            "reposts_count": 353,
+            "secret_token": None,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": True,
+            "tag_list": "",
+            "title": "Calvin Harris ft. Ellie Goulding - Outside (D-Min Bootleg) Nightcore Edited by Gabriel Ibrahim Zyzz",
+            "track_format": "single-track",
+            "uri": "https://api.soundcloud.com/tracks/1199559439",
+            "urn": "soundcloud:tracks:1199559439",
+            "user_id": 135939293,
+            "visuals": None,
+            "waveform_url": "https://wave.sndcdn.com/cnHFfu4HouZi_m.json",
+            "display_date": "2022-01-19T19:39:23Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1199559439/da623e43-5de0-4b12-b0ee-6cfaa8cd0d9c/stream/hls",
+                        "preset": "mp3_0_1",
+                        "duration": 155220,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1199559439/da623e43-5de0-4b12-b0ee-6cfaa8cd0d9c/stream/progressive",
+                        "preset": "mp3_0_1",
+                        "duration": 155220,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1199559439/834b1f4a-78c5-4ac5-a236-4f61e45cc57b/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 155180,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs="opus""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "station_urn": "soundcloud:system-playlists:track-stations:1199559439",
+            "station_permalink": "track-stations:1199559439",
+            "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJDQSIsInN1YiI6IiIsInJpZCI6IjM5ZGE1YjlkLWUwZjYtNDlmZC1hNTUyLTY1YjBkMDg3MDAzMiIsImlhdCI6MTY4MjMyMDcxNn0.wh6WrElw2wIbNXmqRJasPlG3tjcgE7j7hymLwxilK_s",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-JmcEoaBMvz0TjWgY-B51aVg-large.jpg",
+                "first_name": "Vilius",
+                "followers_count": 264,
+                "full_name": "Vilius Bendoravičius",
+                "id": 135939293,
+                "kind": "user",
+                "last_modified": "2021-05-19T13:52:53Z",
+                "last_name": "Bendoravičius",
+                "permalink": "vilius-bendoravi-ius",
+                "permalink_url": "https://soundcloud.com/vilius-bendoravi-ius",
+                "uri": "https://api.soundcloud.com/users/135939293",
+                "urn": "soundcloud:users:135939293",
+                "username": "dhn",
+                "verified": False,
+                "city": "",
+                "country_code": "US",
+                "badges": {
+                    "pro": False,
+                    "pro_unlimited": False,
+                    "verified": False
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:135939293",
+                "station_permalink": "artist-stations:135939293"
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-DMHIpbjQPaPdMQDF-3Z7kzQ-large.jpg",
+            "caption": None,
+            "commentable": True,
+            "comment_count": 86,
+            "created_at": "2021-11-11T20:48:51Z",
+            "description": "",
+            "downloadable": False,
+            "download_count": 0,
+            "duration": 127242,
+            "full_duration": 127242,
+            "embeddable_by": "all",
+            "genre": "",
+            "has_downloads_left": False,
+            "id": 1158446362,
+            "kind": "track",
+            "label_name": None,
+            "last_modified": "2022-05-28T07:14:38Z",
+            "license": "all-rights-reserved",
+            "likes_count": 8483,
+            "permalink": "ellie-goulding-lights-ground-invaders-unknown-identity-hardstyle-super-speed-up-by-fantasy",
+            "permalink_url": "https://soundcloud.com/user-931235848/ellie-goulding-lights-ground-invaders-unknown-identity-hardstyle-super-speed-up-by-fantasy",
+            "playback_count": 936235,
+            "public": True,
+            "publisher_metadata": {
+                "id": 1158446362,
+                "urn": "soundcloud:tracks:1158446362",
+                "artist": "KG™",
+                "contains_music": True
+            },
+            "purchase_title": None,
+            "purchase_url": None,
+            "release_date": None,
+            "reposts_count": 122,
+            "secret_token": None,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": True,
+            "tag_list": "Hardstyle Jumpstyle Zyzz fuark",
+            "title": "Ellie Goulding - Lights (Ground Invaders & Unknown Identity Hardstyle, Super Speed Up By Fantasy)",
+            "track_format": "single-track",
+            "uri": "https://api.soundcloud.com/tracks/1158446362",
+            "urn": "soundcloud:tracks:1158446362",
+            "user_id": 581931483,
+            "visuals": None,
+            "waveform_url": "https://wave.sndcdn.com/deeTafT9KnVh_m.json",
+            "display_date": "2021-11-11T20:48:51Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1158446362/36dfb0de-6551-45f4-9b11-ae780a8a896a/stream/hls",
+                        "preset": "mp3_0_1",
+                        "duration": 127242,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1158446362/36dfb0de-6551-45f4-9b11-ae780a8a896a/stream/progressive",
+                        "preset": "mp3_0_1",
+                        "duration": 127242,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1158446362/a1c1f78a-5a64-4bce-a528-8b9bdaef8cf5/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 127223,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs="opus""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "station_urn": "soundcloud:system-playlists:track-stations:1158446362",
+            "station_permalink": "track-stations:1158446362",
+            "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJDQSIsInN1YiI6IiIsInJpZCI6IjVkYWEwODQ3LTgwYTMtNDI1MC05NDE5LTY0OGZiN2FkNjhkYSIsImlhdCI6MTY4MjMyMDcxNn0.7MS_S_ZtxrTaq-W8lPPjZLQJttKRSefhQ2KxP_PVaFs",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-Z4Of2tIqgsEMMxjr-fygJNw-large.jpg",
+                "first_name": "",
+                "followers_count": 95,
+                "full_name": "",
+                "id": 581931483,
+                "kind": "user",
+                "last_modified": "2021-10-19T20:36:06Z",
+                "last_name": "",
+                "permalink": "user-931235848",
+                "permalink_url": "https://soundcloud.com/user-931235848",
+                "uri": "https://api.soundcloud.com/users/581931483",
+                "urn": "soundcloud:users:581931483",
+                "username": "janpieper",
+                "verified": False,
+                "city": None,
+                "country_code": None,
+                "badges": {
+                    "pro": False,
+                    "pro_unlimited": False,
+                    "verified": False
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:581931483",
+                "station_permalink": "artist-stations:581931483"
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-000207897541-sh79pt-large.jpg",
+            "caption": None,
+            "commentable": True,
+            "comment_count": 773,
+            "created_at": "2017-02-15T10:22:10Z",
+            "description": "Now Available → http://nightbreed.lnk.to/seeyouagain\nNightbreed Merchandise → store.wearethenightbreed.com\nFollow Endymion → @endymionmusic\nJoin us on Facebook → bit.ly/EndymionFB\n\nWhen Endymion presented MYST to the Nightbreed label with their first collaboration “Death Never Dies”, they knew it was only a matter of time before they would team up again. Skip ahead two years, and here it is: their follow-up collab “See You Again”! Experience the uplifting sensation that can only be found in magical team-ups like this. This’ll definitely get you in the mood for the festival season!\n\n“See You Again“ is now available on Nightbreed Records → http://nightbreed.lnk.to/seeyouagain\n\nwww.endymion.nl\n@endymionmusic\nwww.facebook.com/endymionmusic\nwww.twitter.com/endymionmusic\nwww.youtube.com/endymionmusic\nwww.instagram.com/endymionmusic",
+            "downloadable": False,
+            "download_count": 0,
+            "duration": 189900,
+            "full_duration": 189900,
+            "embeddable_by": "all",
+            "genre": "Raw Hardstyle",
+            "has_downloads_left": False,
+            "id": 307843011,
+            "kind": "track",
+            "label_name": "Nightbreed Records",
+            "last_modified": "2022-07-10T12:56:36Z",
+            "license": "all-rights-reserved",
+            "likes_count": 48394,
+            "permalink": "endymion-myst-see-you-again-available-february-28",
+            "permalink_url": "https://soundcloud.com/endymionmusic/endymion-myst-see-you-again-available-february-28",
+            "playback_count": 6703135,
+            "public": True,
+            "publisher_metadata": {
+                "id": 307843011,
+                "urn": "soundcloud:tracks:307843011",
+                "artist": "Endymion & MYST",
+                "contains_music": True,
+                "publisher": "Nightbreed",
+                "isrc": "NLQS91600199",
+                "release_title": "See You Again"
+            },
+            "purchase_title": "STREAM / BUY",
+            "purchase_url": "http://nightbreed.lnk.to/seeyouagain",
+            "release_date": "2017-02-28T00:00:00Z",
+            "reposts_count": 683,
+            "secret_token": None,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": True,
+            "tag_list": "Endymion MYST "See You Again" Nightbreed Records NB033 WATN023 WATN024 Q-dance Radio Hardstyle Raw Rawstyle Euphoric",
+            "title": "Endymion & MYST - See You Again",
+            "track_format": "single-track",
+            "uri": "https://api.soundcloud.com/tracks/307843011",
+            "urn": "soundcloud:tracks:307843011",
+            "user_id": 151388,
+            "visuals": None,
+            "waveform_url": "https://wave.sndcdn.com/1cs3pghaDxIp_m.json",
+            "display_date": "2017-02-15T10:22:10Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:307843011/d7ec086e-afb8-441c-8bb2-877decf4dcee/stream/hls",
+                        "preset": "mp3_0_0",
+                        "duration": 189900,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:307843011/d7ec086e-afb8-441c-8bb2-877decf4dcee/stream/progressive",
+                        "preset": "mp3_0_0",
+                        "duration": 189900,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:307843011/4d5be3f4-edf3-4716-952a-10668a5ee586/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 189900,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs="opus""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "station_urn": "soundcloud:system-playlists:track-stations:307843011",
+            "station_permalink": "track-stations:307843011",
+            "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJDQSIsInN1YiI6IiIsInJpZCI6IjQwOGZiNzE2LWZiZDktNGE3Ny05ZmNkLWRjNDA1ZDFkOTIxZSIsImlhdCI6MTY4MjMyMDcxNn0.1jGC3A7L8gfjI93KwVjxxMFTLZGBq7-d7klqctXmRo8",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-ywodhQdR70T5OmUS-wCUyGw-large.jpg",
+                "first_name": "",
+                "followers_count": 37300,
+                "full_name": "",
+                "id": 151388,
+                "kind": "user",
+                "last_modified": "2022-11-10T11:29:08Z",
+                "last_name": "",
+                "permalink": "endymionmusic",
+                "permalink_url": "https://soundcloud.com/endymionmusic",
+                "uri": "https://api.soundcloud.com/users/151388",
+                "urn": "soundcloud:users:151388",
+                "username": "Endymion",
+                "verified": True,
+                "city": "",
+                "country_code": "NL",
+                "badges": {
+                    "pro": False,
+                    "pro_unlimited": True,
+                    "verified": True
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:151388",
+                "station_permalink": "artist-stations:151388"
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-1wFyf2QPMB5bzcS3-gya2AQ-large.jpg",
+            "caption": None,
+            "commentable": True,
+            "comment_count": 729,
+            "created_at": "2021-10-19T11:05:30Z",
+            "description": "Fallow my instagram- Rolands_08",
+            "downloadable": False,
+            "download_count": 0,
+            "duration": 282802,
+            "full_duration": 282802,
+            "embeddable_by": "all",
+            "genre": "",
+            "has_downloads_left": False,
+            "id": 1144280440,
+            "kind": "track",
+            "label_name": None,
+            "last_modified": "2022-06-26T06:41:42Z",
+            "license": "all-rights-reserved",
+            "likes_count": 37789,
+            "permalink": "your-my-angel-midnight-mix-zyzz",
+            "permalink_url": "https://soundcloud.com/rolands-skirmantas/your-my-angel-midnight-mix-zyzz",
+            "playback_count": 3697768,
+            "public": True,
+            "publisher_metadata": {
+                "id": 1144280440,
+                "urn": "soundcloud:tracks:1144280440",
+                "artist": "Rolands",
+                "contains_music": True,
+                "isrc": "QM8DG2256228"
+            },
+            "purchase_title": None,
+            "purchase_url": None,
+            "release_date": None,
+            "reposts_count": 521,
+            "secret_token": None,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": True,
+            "tag_list": "zyzz lightweight",
+            "title": "Your My Angel (Midnight Mix) ZyZz(Rolands Remix)",
+            "track_format": "single-track",
+            "uri": "https://api.soundcloud.com/tracks/1144280440",
+            "urn": "soundcloud:tracks:1144280440",
+            "user_id": 974815699,
+            "visuals": None,
+            "waveform_url": "https://wave.sndcdn.com/yf90pNkzXNCk_m.json",
+            "display_date": "2021-10-19T11:05:30Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1144280440/b49bbb99-f524-44c7-8859-4756394d688a/stream/hls",
+                        "preset": "mp3_0_1",
+                        "duration": 282802,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1144280440/b49bbb99-f524-44c7-8859-4756394d688a/stream/progressive",
+                        "preset": "mp3_0_1",
+                        "duration": 282802,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:1144280440/c082b99d-d5e5-43e0-8134-a46f3ac45357/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 282782,
+                        "snipped": False,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs="opus""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "station_urn": "soundcloud:system-playlists:track-stations:1144280440",
+            "station_permalink": "track-stations:1144280440",
+            "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJDQSIsInN1YiI6IiIsInJpZCI6IiIsImlhdCI6MTY4MjMyMDcxNn0.ed1BwtMxE33vKVeOhFTtXrFp_wk2xhy7vWOe1bhTiqI",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-lRi5NSrZjA16zLn7-mhuM1g-large.jpg",
+                "first_name": "Rolands",
+                "followers_count": 737,
+                "full_name": "Rolands Skirmantas",
+                "id": 974815699,
+                "kind": "user",
+                "last_modified": "2023-02-07T06:33:19Z",
+                "last_name": "Skirmantas",
+                "permalink": "rolands-skirmantas",
+                "permalink_url": "https://soundcloud.com/rolands-skirmantas",
+                "uri": "https://api.soundcloud.com/users/974815699",
+                "urn": "soundcloud:users:974815699",
+                "username": "Rolands Remix",
+                "verified": False,
+                "city": "",
+                "country_code": "LV",
+                "badges": {
+                    "pro": False,
+                    "pro_unlimited": False,
+                    "verified": False
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:974815699",
+                "station_permalink": "artist-stations:974815699"
+            }
+        },
+        {
+            "id": 748285264,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1190646781,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 970690591,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1201869388,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 305262435,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1198322518,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1081402498,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 832701847,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1185064003,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 685797025,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1218159046,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 295918222,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1235117527,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1245922771,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1260973210,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1258181371,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1255024582,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1252258372,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1191317812,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1254979411,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1168198087,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1231907746,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1219073944,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1236024982,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1123123324,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1233786586,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1213641295,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1257073108,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1240065892,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1232208697,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1250452165,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1247427064,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1253814931,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1162066291,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1262591818,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1282790434,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1260660517,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1251962896,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1266614821,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1273260370,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1267395640,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1261727419,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1258089640,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1278575203,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1266667819,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1272824119,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1273692817,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1280773096,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1282904245,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1273249009,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1251962539,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1274890138,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1272817213,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1272425830,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1279555180,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1264852507,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1268187886,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1268730427,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1252461625,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1277648764,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1278506011,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1275818860,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1271350720,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1275424549,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1274301241,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1276327003,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1262986549,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 127558863,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1264516300,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1128983770,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 327594881,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1302764887,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1302309613,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1366265008,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1284623212,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1311727054,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 483808488,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 463309638,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1149427780,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 830595676,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 653549420,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 871553980,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1102847161,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1320281737,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1373781868,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1082190847,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1370497336,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1120626889,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 347518828,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 169976433,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1407424477,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 766162594,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1395386419,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1148638603,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1317014026,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1246319776,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1164838060,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1202299261,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1318095553,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1373211766,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 875436283,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1215176449,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 875435920,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 864017605,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1310198158,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1089451972,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1289131417,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1267822810,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 546824877,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1345236313,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 916865788,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1276833724,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1258293145,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1212474313,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 408379566,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1302829051,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1155123085,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1114188217,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1323586288,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1294890766,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1273210573,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1313697751,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1232422393,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1354470229,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1313697664,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1435251502,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1420188313,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1303301212,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1456259389,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1452376522,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1300329139,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1442699680,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1454906575,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1302595480,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1429114555,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1313703139,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 698185555,
+            "kind": "track",
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW"
+        },
+        {
+            "id": 1459992694,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1457547466,
+            "kind": "track",
+            "monetization_model": "AD_SUPPORTED",
+            "policy": "MONETIZE"
+        },
+        {
+            "id": 1486224715,
+            "kind": "track",
+            "monetization_model": "BLACKBOX",
+            "policy": "MONETIZE"
+        }
+    ],
+    "track_count": 145
+}

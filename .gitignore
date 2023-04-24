@@ -144,4 +144,5 @@ temp/
 !playlists.txt
 !.env
 !.txt
+!newFiles.txt
 /debug

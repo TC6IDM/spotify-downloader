@@ -726,7 +726,9 @@ class Downloader:
 
             # Add the song to the known songs
             self.known_songs.get(song.url, []).append(output_file)
-
+            file = open('C:\\Users\\Owner\\Desktop\\spotify-downloader\\newFiles.txt', 'a')
+            file.write(song.list_name+"\\"+song.display_name+"\n")
+            file.close()
             logger.info('Downloaded "%s": %s', song.display_name, song.download_url)
 
             return song, output_file
