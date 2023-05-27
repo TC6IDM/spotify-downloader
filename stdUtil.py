@@ -25,6 +25,8 @@ load_dotenv()
 PLAYLIST_FILE_NAME = os.getenv("PLAYLIST_FILE_NAME", "")
 CLIENT_ID = os.getenv("CLIENT_ID", "")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET", "")
+COOKIE_FILE = os.getenv("COOKIE_FILE", "")
+USERNAME = os.getenv("USERNAME", "")
 
 def removePunctuation(text) -> str:
     cleanerTrackName = re.sub(r'[^\w\s]', '', text)
@@ -95,5 +97,5 @@ def validateFiles():
     for k in deletefiles:
         os.remove(k)
 
-def getzeros(number,max):
+def getzeros(number: int ,max: int):
     return str(number).zfill(len(str(max)))

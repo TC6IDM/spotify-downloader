@@ -40,7 +40,7 @@ def console_entry_point():
 
     # Create config file if it doesn't exist
     generate_initial_config()
-
+    # print(ACTIONS)
     # Check if sys.argv contains an action
     # If it does, we run the action and exit
     try:
@@ -56,7 +56,7 @@ def console_entry_point():
 
     # Parse the arguments
     arguments = parse_arguments()
-
+    # print(arguments)
     # Create settings dicts
     spotify_settings, downloader_settings, web_settings = create_settings(arguments)
 

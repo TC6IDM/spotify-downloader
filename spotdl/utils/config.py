@@ -231,7 +231,7 @@ SPOTIFY_OPTIONS: SpotifyOptions = {
 }
 
 DOWNLOADER_OPTIONS: DownloaderOptions = {
-    "audio_providers": ["youtube-music", "youtube","slider-kz"],
+    "audio_providers": ["youtube-music"],
     "lyrics_providers": ["genius", "azlyrics", "musixmatch"],
     "playlist_numbering": False,
     "scan_for_songs": False,

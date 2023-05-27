@@ -47,9 +47,9 @@ __all__ = [
 ]
 
 AUDIO_PROVIDERS: Dict[str, Type[AudioProvider]] = {
-    "youtube": YouTube,
+    # "youtube": YouTube,
     "youtube-music": YouTubeMusic,
-    "slider-kz": SliderKZ,
+    # "slider-kz": SliderKZ,
 }
 
 LYRICS_PROVIDERS: Dict[str, Type[LyricsProvider]] = {
@@ -329,6 +329,13 @@ class Downloader:
         """
 
         for audio_provider in self.audio_providers:
+            # print("HELO")
+            # print("HELO")
+            # print("HELO")
+            # print("HELO")
+            # print("HELO")
+            # print("HELO")
+            
             display_progress_tracker.notify_search(audio_provider.name)
             url = audio_provider.search(song)
             if url:
@@ -338,7 +345,9 @@ class Downloader:
         # prRed(f"LookupError: No results found for song: {song.display_name}")
         display_progress_tracker.notify_search("Original Method")
         # time.sleep(200000000)
-        return getBestVideo(song)
+        songurl = getBestVideo(song)
+        print(songurl)
+        return songurl
         # raise LookupError(f"No results found for song: {song.display_name}")
         
     def search_lyrics(self, song: Song) -> Optional[str]:
@@ -727,7 +736,7 @@ class Downloader:
             # Add the song to the known songs
             self.known_songs.get(song.url, []).append(output_file)
             file = open('C:\\Users\\Owner\\Desktop\\spotify-downloader\\newFiles.txt', 'a')
-            file.write(song.list_name+"\\"+song.display_name+"\n")
+            file.write(song.list_name+"\\"+str(song.list_position)+" "+song.display_name+"\n")
             file.close()
             logger.info('Downloaded "%s": %s', song.display_name, song.download_url)
 
