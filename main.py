@@ -1,3 +1,5 @@
+#& C:/Users/Owner/AppData/Local/Microsoft/WindowsApps/python3.10.exe c:/Users/Owner/Desktop/spotify-downloader/main.py
+
 import math
 import re
 import subprocess
@@ -6,7 +8,7 @@ from spotdl import console_entry_point
 import yt_dlp
 import urllib.request
 from spotdl.utils import spotify
-from stdUtil import COOKIE_FILE, USERNAME, deleteBadCharacters, prLightPurple, CLIENT_ID, CLIENT_SECRET, getImage, getzeros, prCyan, prGreen, prPurple, PLAYLIST_FILE_NAME, prYellow, printBar, removePunctuation ,validateFiles
+from stdUtil import COOKIE_FILE, USERNAME, deleteBadCharacters, prLightPurple, CLIENT_ID, CLIENT_SECRET, getImage, getzeros, prCyan, prGreen, prPurple, PLAYLIST_FILE_NAME, prRed, prYellow, printBar, removePunctuation ,validateFiles
 import os
 from os import walk
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -17,6 +19,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from spotdl.types import artist
 from spotdl.utils.spotify import SpotifyClient
+#C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pytube\__main__.py WTF???? WHY IS LEN AND VIEWS NEVER RETURNING ANYTHING OTHER THAN 0???????
 class MyLogger:
     def debug(self, msg):
         # For compatibility with youtube-dl, both debug and info are passed into debug
@@ -171,49 +174,54 @@ def run():
             
             assert type(playlist) is Playlist
             for x,track in enumerate(playlist.tracks,start=1):
-                printBar(x,playlist.track_count,playlist.title,printEnd="\r")
-                filename = f'D:\\Songs4\\{playlist.title}\\({getzeros(x,playlist.track_count)}) {removePunctuation(track.artist)} - {removePunctuation(track.title)}.mp3'
-                if not os.path.isfile(filename):
-                    with open(filename, 'wb+') as file:
-                        track.write_mp3_to(file)
-                    stri = f'Downloaded "{track.artist} - {track.title}": {track.permalink_url}'
-                    file = open('C:\\Users\\Owner\\Desktop\\spotify-downloader\\newFiles.txt', 'a')
-                    file.write(playlist.title+"\\"+str(x)+" "+deleteBadCharacters(track.title)+"\n")
-                    file.close()
-                else:
-                    stri = f'Skipping "{track.artist} - {track.title}" (file already exists)'
-                
-                prGreen(stri+ (os.get_terminal_size().columns - len(stri))*" ")
+                try:
+                    printBar(x,playlist.track_count,playlist.title,printEnd="\r")
+                    filename = f'D:\\Songs4\\{playlist.title}\\({getzeros(x,playlist.track_count)}) {removePunctuation(track.artist)} - {removePunctuation(track.title)}.mp3'
+                    if not os.path.isfile(filename):
+                        with open(filename, 'wb+') as file:
+                            track.write_mp3_to(file)
+                        stri = f'Downloaded "{track.artist} - {track.title}": {track.permalink_url}'
+                        file = open('C:\\Users\\Owner\\Desktop\\spotify-downloader\\newFiles.txt', 'a')
+                        file.write(playlist.title+"\\"+str(x)+" "+deleteBadCharacters(track.title)+"\n")
+                        file.close()
+                    else:
+                        stri = f'Skipping "{track.artist} - {track.title}" (file already exists)'
+                    
+                    prGreen(stri+ (os.get_terminal_size().columns - len(stri))*" ")
+                except:
+                    stri = f'Error downloading "{track.artist} - {track.title}"'
+                    prRed(stri+ (os.get_terminal_size().columns - len(stri))*" ")
+                    pass
             prCyan(f"{type2} COMPLETE: {playlist.title}")        
-        # elif "youtube" in currentPlaylist.lower(): #WIP
-        #     link = re.sub(" .*", "", currentPlaylist).strip()
-        #     print(link)
-        #     playlist = YoutubePlaylist(link)
-        #     URLS = [video_url for video_url in playlist]
-        #     # print(URLS)
-        #     dir_path2 = f'D:\\Songs4\\{playlist.title}\\'
-        #     # time.sleep(200)
-        #     ydl_opts = {
-        #     'format': 'mp3/bestaudio/best',
-        #     'postprocessors': [{
-        #         'key': 'FFmpegExtractAudio',
-        #         'preferredcodec': 'mp3',
-        #         'preferredquality': '320',#highest quality
-        #     },{
-        #         'key': 'FFmpegMetadata',
-        #         'add_metadata': True,
-        #     }],
-        #     'ignoreerrors': True, #ignore errors
-        #     'outtmpl': dir_path2+'(%(video_autonumber)s) %(uploader)s - %(title)s.%(ext)s', #save songs here .%(ext)s
-        #     # 'outtmpl': dir_path2+"("+getzeros(int('%(video_autonumber)s'),int('%(playlist_count)s'))+') '+ removePunctuation("%(uploader)s")+ ' - ' +removePunctuation("%(title)s") +'.%(ext)s', #save songs here .%(ext)s
-        #     'logger': MyLogger(),
-        #     'progress_hooks': [my_hook],
-        #     'cookiefile': COOKIE_FILE, #cookies for downloading age restricted videos
-        #     }
-
-        #     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        #         ydl.download(URLS)
-        # pass
+        elif "youtube" in currentPlaylist.lower(): #WIP
+            link = re.sub(" .*", "", currentPlaylist).strip()
+            print(link)
+            playlist = YoutubePlaylist(link)
+            # print(playlist.playlist_id)
+            URLS = [video_url for video_url in playlist]
+            print(URLS)
+            dir_path2 = f'D:\\Songs4\\{playlist.title}\\'
+            # time.sleep(200)
+            ydl_opts = {
+            'format': 'mp3/bestaudio/best',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '320',#highest quality
+            },{
+                'key': 'FFmpegMetadata',
+                'add_metadata': True,
+            }],
+            'ignoreerrors': True, #ignore errors
+            'outtmpl': dir_path2+'(%(video_autonumber)s) %(uploader)s - %(title)s.%(ext)s', #save songs here .%(ext)s
+            # 'outtmpl': dir_path2+"("+getzeros(int('%(video_autonumber)s'),int('%(playlist_count)s'))+') '+ removePunctuation("%(uploader)s")+ ' - ' +removePunctuation("%(title)s") +'.%(ext)s', #save songs here .%(ext)s
+            'logger': MyLogger(),
+            'progress_hooks': [my_hook],
+            'cookiefile': COOKIE_FILE, #cookies for downloading age restricted videos
+            }
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                ydl.download(URLS)
+        pass
     prLightPurple("DONE ALL PLAYLISTS")
     
 if __name__ == "__main__":

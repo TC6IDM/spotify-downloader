@@ -60,7 +60,10 @@ def getImage(url,type):
     if type == "artist": out = session.artist(url)
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
-    urllib.request.urlretrieve(out['images'][0]["url"], dir_path+"\\\\"+out['name']+".jpg")
+    try:    
+        urllib.request.urlretrieve(out['images'][0]["url"], dir_path+"\\\\"+out['name']+".jpg")
+    except:
+        pass
     return out['name']
 
     folder = "C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug2"

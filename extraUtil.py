@@ -63,9 +63,9 @@ def get_videos(song: Song) -> List[YoutubeSong]:
         s = Search(song.youtubeSearch)
         i=0
         for r in s.results:
-            prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%')
+            # prGreen(f'Found {i+1} of {len(s.results)} results {round(100*(i+1) / len(s.results),2)}%')
             thisYoutubeSong = YoutubeSong(song,r)
-            print("debug")
+            # print("debug")
             youtubeVideos.append(thisYoutubeSong)
             i+=1
         if len(youtubeVideos) == 0:
@@ -79,7 +79,7 @@ def getBestVideo(song: Song) -> str:
     possibleSongList: List[YoutubeSong] =[]
     oneT=10**12
     while song.bestMatch is None:
-        print(song.bestMatch)
+        # print(song.bestMatch)
         for i,currentYoutubeVideo in enumerate(song.youtubeSongs):
             # print(f'\nFinding Best Video {i} of {MAX_SEARCH_DEPTH} {100*i/MAX_SEARCH_DEPTH}%                        ',end='\r')
             # print(currentYoutubeVideo)

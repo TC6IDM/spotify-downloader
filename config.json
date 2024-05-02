@@ -8,7 +8,9 @@
     "no_cache": false,
     "max_retries": 3,
     "audio_providers": [
-        "youtube-music"
+        "youtube-music",
+        "youtube",
+        "slider-kz"
     ],
     "lyrics_providers": [
         "genius",

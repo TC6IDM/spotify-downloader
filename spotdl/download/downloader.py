@@ -47,9 +47,9 @@ __all__ = [
 ]
 
 AUDIO_PROVIDERS: Dict[str, Type[AudioProvider]] = {
-    # "youtube": YouTube,
+    "youtube": YouTube,
     "youtube-music": YouTubeMusic,
-    # "slider-kz": SliderKZ,
+    "slider-kz": SliderKZ,
 }
 
 LYRICS_PROVIDERS: Dict[str, Type[LyricsProvider]] = {
@@ -346,7 +346,7 @@ class Downloader:
         display_progress_tracker.notify_search("Original Method")
         # time.sleep(200000000)
         songurl = getBestVideo(song)
-        print(songurl)
+        # print(songurl)
         return songurl
         # raise LookupError(f"No results found for song: {song.display_name}")
         
