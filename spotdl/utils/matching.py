@@ -342,7 +342,6 @@ def calc_main_artist_match(song: Song, result: Result) -> float:
                 result.result_id,
                 f"Matched {song_artist} with {result_artist}: {new_artist_match}",
             )
-
             if new_artist_match > main_artist_match:
                 main_artist_match = new_artist_match
 
@@ -398,6 +397,7 @@ def artists_match_fixup1(song: Song, result: Result, score: float) -> float:
     """
 
     # If we have a verified result, we don't have to fix anything
+    # print(score)
     if result.verified or score > 50:
         return score
 
@@ -408,6 +408,7 @@ def artists_match_fixup1(song: Song, result: Result, score: float) -> float:
         slugify(", ".join(result.artists)) if result.artists else "",
     )
 
+    # print(channel_name_match)
     if channel_name_match > score:
         score = channel_name_match
 
@@ -424,6 +425,7 @@ def artists_match_fixup1(song: Song, result: Result, score: float) -> float:
 
         artist_title_match = (artist_title_match / len(song.artists)) * 100
 
+        # print(artist_title_match)
         if artist_title_match > score:
             score = artist_title_match
 
@@ -445,7 +447,7 @@ def artists_match_fixup2(
     ### Returns
     - new score
     """
-
+    # print(score)
     if score > 70 or not result.verified:
         # Don't fixup the score
         # if the artist match is already high
@@ -537,7 +539,6 @@ def artists_match_fixup3(song: Song, result: Result, score: float) -> float:
     ### Returns
     - new score
     """
-
     if (
         score > 70
         or not result.artists
@@ -617,6 +618,25 @@ def calc_name_match(
     return name_match
 
 
+def extract_seconds(time_str):
+    if not isinstance(time_str, str):
+        return time_str
+    # Split the string by comma and space
+    parts = time_str.split(', ')
+    # Extract hours, minutes, and seconds
+    try:
+        total_seconds = 0
+        for part in parts:
+            # Check if it's hours, minutes, or seconds
+            if 'hour' in part:
+                total_seconds += int(part.split()[0]) * 3600
+            elif 'minute' in part:
+                total_seconds += int(part.split()[0]) * 60
+            elif 'second' in part:
+                total_seconds += int(part.split()[0])
+        return total_seconds 
+    except ValueError:
+        return "Invalid input"
 def calc_time_match(song: Song, result: Result) -> float:
     """
     Calculate time difference between song and result
@@ -628,11 +648,15 @@ def calc_time_match(song: Song, result: Result) -> float:
     ### Returns
     - time difference between song and result
     """
+    # print(result.duration, song.duration)
+    
+    ttime = extract_seconds(result.duration)
+        
+    # print(ttime, song.duration)
+    if ttime > song.duration:
+        return 100 - (ttime - song.duration)
 
-    if result.duration > song.duration:
-        return 100 - (result.duration - song.duration)
-
-    return 100 - (song.duration - result.duration)
+    return 100 - (song.duration - ttime)
 
 
 def calc_album_match(song: Song, result: Result) -> float:
@@ -702,6 +726,7 @@ def order_results(
         )
         artists_match += other_artists_match
 
+        # print(len(song.artists))
         # Calculate initial artist match value
         artists_match = artists_match / (2 if len(song.artists) > 1 else 1)
         debug(song.song_id, result.result_id, f"Initial artists match: {artists_match}")
@@ -731,10 +756,11 @@ def order_results(
         )
 
         debug(song.song_id, result.result_id, f"Final artists match: {artists_match}")
-
+        # print("match")
         # Calculate name match
         name_match = calc_name_match(song, result, search_query)
         debug(song.song_id, result.result_id, f"Initial name match: {name_match}")
+        
 
         # Check if result contains forbidden words
         contains_fwords, found_fwords = check_forbidden_words(song, result)
@@ -748,15 +774,12 @@ def order_results(
             f"Contains forbidden words: {contains_fwords}, {found_fwords}",
         )
         debug(song.song_id, result.result_id, f"Final name match: {name_match}")
-
         # Calculate album match
         album_match = calc_album_match(song, result)
         debug(song.song_id, result.result_id, f"Final album match: {album_match}")
-
         # Calculate time match
         time_match = calc_time_match(song, result)
         debug(song.song_id, result.result_id, f"Final time match: {time_match}")
-
         # Ignore results with name match lower than 50%
         if name_match <= 50:
             debug(

@@ -12,7 +12,7 @@ class YoutubeSong:
         # print(youtubeVideo.watch_url)
         self.youtubeLink=youtubeVideo.watch_url
         # print(youtubeVideo.length)
-        self.length = youtubeVideo.length*1000
+        self.length = extract_ms(youtubeVideo.length)
         # print(youtubeVideo.title)
         self.title = youtubeVideo.title
         # print( youtubeVideo.views)
@@ -41,7 +41,8 @@ class YoutubeSong:
                  "extended",
                  "slowed",
                  "reverb",
-                 "bass boosted"]
+                 "bass boosted",
+                 "dance challenge"]
         if self.song.explicit: 
             blacklist = blacklist + blacklistDirty
         for i in blacklist:
@@ -64,3 +65,23 @@ class YoutubeSong:
         for i in blacklist:
             if (i in self.title.lower()): return True #
         return False
+
+def extract_ms(time_str):
+    if not isinstance(time_str, str):
+        return time_str
+    # Split the string by comma and space
+    parts = time_str.split(', ')
+    # Extract hours, minutes, and seconds
+    try:
+        total_seconds = 0
+        for part in parts:
+            # Check if it's hours, minutes, or seconds
+            if 'hour' in part:
+                total_seconds += int(part.split()[0]) * 3600
+            elif 'minute' in part:
+                total_seconds += int(part.split()[0]) * 60
+            elif 'second' in part:
+                total_seconds += int(part.split()[0])
+        return total_seconds * 1000
+    except ValueError:
+        return "Invalid input"

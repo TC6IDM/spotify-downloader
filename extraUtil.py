@@ -81,33 +81,37 @@ def getBestVideo(song: Song) -> str:
     while song.bestMatch is None:
         # print(song.bestMatch)
         for i,currentYoutubeVideo in enumerate(song.youtubeSongs):
-            # print(f'\nFinding Best Video {i} of {MAX_SEARCH_DEPTH} {100*i/MAX_SEARCH_DEPTH}%                        ',end='\r')
+            # print(f'Finding Best Video {i} of {len(song.youtubeSongs)} {100*i/len(song.youtubeSongs)}%                        ')
             # print(currentYoutubeVideo)
-            currentYoutubeVideo.weight = currentYoutubeVideo.views
-            timediff = abs(int(currentYoutubeVideo.song.duration)-int(currentYoutubeVideo.length))
+            currentYoutubeVideo.weight = currentYoutubeVideo.views            
+            timediff = abs(int(currentYoutubeVideo.song.duration)-int(currentYoutubeVideo.length))            
             currentYoutubeVideo.notWithinTimeLimit = timediff > difference+(int(currentYoutubeVideo.song.duration)*0.05)
             currentYoutubeVideo.badTitle = not currentYoutubeVideo.isNotBad()
-            currentYoutubeVideo.nameInTitle = cleanTrackName(deleteBadCharacters(currentYoutubeVideo.song.name)) in currentYoutubeVideo.title.lower()
+            currentYoutubeVideo.nameInTitle = cleanTrackName(deleteBadCharacters(currentYoutubeVideo.song.name)) in cleanTrackName(deleteBadCharacters(currentYoutubeVideo.title))
             currentYoutubeVideo.goodNameInTitle = currentYoutubeVideo.isVeryGood()
             currentYoutubeVideo.closeToTime = timediff<=difference
             if (currentYoutubeVideo.notWithinTimeLimit or currentYoutubeVideo.badTitle): continue
                 
-            if currentYoutubeVideo.nameInTitle: currentYoutubeVideo.weight += oneT
-            if currentYoutubeVideo.goodNameInTitle: currentYoutubeVideo.weight += oneT
-            if currentYoutubeVideo.closeToTime: currentYoutubeVideo.weight += oneT 
+            if currentYoutubeVideo.nameInTitle: currentYoutubeVideo.weight += 3*oneT
+            if currentYoutubeVideo.goodNameInTitle: currentYoutubeVideo.weight += 2*oneT
+            if currentYoutubeVideo.closeToTime: currentYoutubeVideo.weight += 1*oneT 
             possibleSongList.append(currentYoutubeVideo)
         
         if (len(possibleSongList)!=0):
             possibleSongList.sort(key=lambda x: x.weight, reverse=True)
             song.bestMatch = possibleSongList[0]
+            
+            # for i in possibleSongList:
+            #     print("HELLO",i.weight)
             saveToDebug(song)
             return song.bestMatch.youtubeLink
         # prRed(f'No suitable video found for {currentYoutubeVideo.song.name} within {difference} ms of the origninal',end='\r')
         difference+=1000
 
 def saveToDebug(song: Song):
+    print("saving to debug - "+song.list_name.rstrip()+"\\("+str(song.list_position)+") - "+removePunctuation(song.name)+".json")
     json_object = jsonpickle.encode(song)
-    folder = "C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug\\"+song.list_name
+    folder = "C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug\\"+song.list_name.rstrip()
     if not os.path.exists(folder):
         os.makedirs(folder)
     # with open("C:\\Users\\Owner\\Desktop\\spotify-downloader\\debug\\"+song.list_name+"\\"+str(addZeros(len([entry for entry in os.listdir(folder) if os.path.isfile(os.path.join(folder, entry))])+1))+" - "+removePunctuation(song.name)+".json", "w") as outfile:

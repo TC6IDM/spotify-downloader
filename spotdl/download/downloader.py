@@ -334,7 +334,7 @@ class Downloader:
             # print("HELO")
             # print("HELO")
             # print("HELO")
-            # print("HELO")
+            # print(audio_provider.name)
             
             display_progress_tracker.notify_search(audio_provider.name)
             url = audio_provider.search(song)
@@ -735,9 +735,9 @@ class Downloader:
 
             # Add the song to the known songs
             self.known_songs.get(song.url, []).append(output_file)
-            file = open('C:\\Users\\Owner\\Desktop\\spotify-downloader\\newFiles.txt', 'a')
-            file.write(song.list_name+"\\"+str(song.list_position)+" "+song.display_name+"\n")
-            file.close()
+            # file = open('C:\\Users\\Owner\\Desktop\\spotify-downloader\\newFiles.txt', 'a')
+            # file.write(song.list_name+"\\"+str(song.list_position)+" "+song.display_name+"\n")
+            # file.close()
             logger.info('Downloaded "%s": %s', song.display_name, song.download_url)
 
             return song, output_file

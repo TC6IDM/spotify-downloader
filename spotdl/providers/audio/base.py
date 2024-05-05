@@ -153,12 +153,13 @@ class AudioProvider:
             search_query = create_search_query(
                 song, self.search_query, False, None, True
             )
-
+        
         logger.debug("[%s] Searching for %s", song.song_id, search_query)
 
         isrc_urls: List[str] = []
 
         # search for song using isrc if it's available
+        # print(song.isrc and self.SUPPORTS_ISRC and not self.search_query)
         if song.isrc and self.SUPPORTS_ISRC and not self.search_query:
             isrc_results = self.get_results(
                 song.isrc, filter="songs", ignore_spelling=True
@@ -172,7 +173,7 @@ class AudioProvider:
                 len(isrc_results),
                 song.isrc,
             )
-
+            
             if len(isrc_results) > 0:
                 # get the best result, if the score is above 80 return it
                 best_isrc_results = sorted(
@@ -195,12 +196,12 @@ class AudioProvider:
                         )
 
                         return best_isrc[0].url
-
         results: Dict[Result, float] = {}
         for options in self.GET_RESULTS_OPTS:
             # Query YTM by songs only first, this way if we get correct result on the first try
             # we don't have to make another request
             search_results = self.get_results(search_query, **options)
+            # print("test")
             logger.debug(
                 "[%s] Found %s results for search query %s with options %s",
                 song.song_id,
@@ -231,7 +232,7 @@ class AudioProvider:
                 new_results = {}
                 if len(new_results) > 0:
                     new_results = {search_results[0]: 100.0}
-
+            # print("test")
             logger.debug("[%s] Filtered to %s results", song.song_id, len(new_results))
 
             # song type results are always more accurate than video type,
@@ -258,6 +259,7 @@ class AudioProvider:
                     return best_result.url
 
                 # Update final results with new results
+                
                 results.update(new_results)
 
         # No matches found
@@ -273,7 +275,6 @@ class AudioProvider:
             best_result.url,
             best_score,
         )
-
         return best_result.url
 
     def get_best_result(self, results: Dict[Result, float]) -> Tuple[Result, float]:

@@ -45,7 +45,6 @@ class Playlist(SongList):
         playlist = spotify_client.playlist(url)
         if playlist is None:
             raise PlaylistError("Invalid playlist URL.")
-
         metadata = {
             "name": playlist["name"],
             "url": url,
