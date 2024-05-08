@@ -41,7 +41,8 @@ class MyLogger:
 # ℹ️ See "progress_hooks" in help(yt_dlp.YoutubeDL)
 def my_hook(d):
     if d['status'] == 'finished':
-        print('Done downloading, now post-processing ...')     
+        print('Done downloading, now post-processing ...')
+         
                     
 def run():
     namespace = argparse.Namespace(
@@ -194,13 +195,29 @@ def run():
                     pass
             prCyan(f"{type2} COMPLETE: {playlist.title}")        
         elif "youtube" in currentPlaylist.lower(): #WIP
+            type2 = "Youtube Playlist"
             link = re.sub(" .*", "", currentPlaylist).strip()
-            print(link)
             playlist = YoutubePlaylist(link)
             # print(playlist.playlist_id)
             URLS = [video_url for video_url in playlist]
-            print(URLS)
+            prPurple(f"STARTING {type2}: {playlist.title}")
+            prGreen(f"Processing query: {link}")
+            prGreen(f"Found {len(URLS)} songs in {playlist.title} ({type2})")
+            # print(URLS)
             dir_path2 = f'D:\\Songs4\\{playlist.title}\\'
+            # time.sleep(200)
+            alreadyDownloaded = []
+            regexpattern = r'^\S+\s|\..*$'
+            for index,url in enumerate(URLS,1):
+                for filename in os.listdir(dir_path2):
+                    if filename.startswith(f"({index})"):
+                        # prGreen(f'Skipping {re.sub(regexpattern, "", filename)}: (file already exists)')
+                        alreadyDownloaded.append(url)
+                        break
+            
+            newURLS = [url for url in URLS if url not in alreadyDownloaded]
+            # prefixed = [filename for filename in os.listdir(dir_path2) if filename.startswith("(1)")]
+            # print(newURLS)
             # time.sleep(200)
             ydl_opts = {
             'format': 'mp3/bestaudio/best',
